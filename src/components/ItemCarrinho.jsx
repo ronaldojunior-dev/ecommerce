@@ -6,13 +6,17 @@ export function ItemCarrinho({ produto }) {
 
   return (
     <div className="item-carrinho">
-      <div>
+      <div className="item-detalhes">
         <h3>{produto.nome}</h3>
-        <p>Preço unitário: {formatarMoeda(produto.precoUnitario)}</p>
-        <p>Quantidade: {produto.quantidade}</p>
+        <div className="item-meta">
+          <span>{formatarMoeda(produto.precoUnitario)}</span>
+          <span>•</span>
+          <span className="qtd-badge">{produto.quantidade}x</span>
+        </div>
       </div>
-      <div>
-        <strong>Subtotal: {formatarMoeda(subtotal)}</strong>
+      <div className="item-preco">
+        <span className="subtotal-rotulo">Subtotal</span>
+        <strong className="subtotal-valor">{formatarMoeda(subtotal)}</strong>
       </div>
     </div>
   );
